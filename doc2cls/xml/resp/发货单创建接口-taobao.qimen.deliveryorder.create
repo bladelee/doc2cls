@@ -1,0 +1,49 @@
+<response> 
+
+  <flag>success|failure</flag>  
+
+  <code>响应码</code>  
+
+  <message>响应信息</message>
+
+  <createTime>订单创建时间, string (19) , YYYY-MM-DD HH:MM:SS</createTime> 
+
+  <deliveryOrderId>出库单仓储系统编码, string (50) </deliveryOrderId>
+
+  <warehouseCode>仓库编码(统仓统配使用),string(50)</warehouseCode>
+
+  <logisticsCode>物流公司编码(统仓统配使用),string(50)</logisticsCode>
+
+ <deliveryOrders><!--拆单-->
+
+  <deliveryOrder>
+
+   <deliveryOrderId>出库单仓储系统编码, string (50)  </deliveryOrderId>  
+
+   <warehouseCode>仓库编码(统仓统配使用),string(50)</warehouseCode>
+
+   <logisticsCode>物流公司编码(统仓统配使用),string(50)</logisticsCode>
+
+<orderLines >
+
+   <orderLine>
+
+        <orderLineNo> 行号,string(50)</orderLineNo>
+
+	<itemCode>ERP商品编码,string(50)</itemCode>
+
+    <itemId>WMS商品编码,string(50)</itemId>
+
+    <quantity>数量,string(50)</quantity>
+
+</orderLine>
+
+    </orderLines>
+
+    <createTime>订单创建时间, string (19) , YYYY-MM-DD HH:MM:SS</createTime> 
+
+   </deliveryOrder>
+
+  </deliveryOrders>
+
+</response>

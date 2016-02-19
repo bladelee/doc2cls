@@ -1,0 +1,63 @@
+<response> 
+
+  <flag>success|failure</flag>  
+
+  <code>响应码</code>  
+
+  <message>响应信息</message>
+
+   <totalLines>orderLines总条数,int,必填</totalLines>
+
+  <entryOrder> 
+
+    <entryOrderCode>入库单编码,  string (50) ,  必填</entryOrderCode>  
+
+    <ownerCode>货主编码,  string (50) </ownerCode>  
+
+    <warehouseCode>仓库编码, string (50),必填 </warehouseCode>   
+
+    <entryOrderId>仓储系统入库单ID, string (50) , 条件必填</entryOrderId>  
+
+    <entryOrderType>入库单类型 ,SCRK=生产入库,LYRK=领用入库,CCRK=残次品入库,CGRK=采购入库, DBRK=调拨入库, QTRK=其他入库,B2BRK=B2B入库</entryOrderType>  
+
+    <status>入库单状态, string (50) ,  必填 (NEW-未开始处理,  ACCEPT-仓库接单 , PARTFULFILLED-部分收货完成,  FULFILLED-收货完成,  EXCEPTION-异常,  CANCELED-取消,  CLOSED-关闭,  REJECT-拒单,  CANCELEDFAIL-取消失败) ,  (只传英文编码) </status>  
+
+    <operateTime>操作时间,  string (19) , YYYY-MM-DD HH:MM:SS,(当status=FULFILLED, operateTime为入库时间) </operateTime> 
+
+  </entryOrder>  
+
+  <orderLines> 
+
+<orderLine> 
+
+  <orderLineNo>单据行号,string(50)</orderLineNo>
+
+      <itemCode>商品编码, string (50) , 必填</itemCode>  
+
+      <itemId>仓储系统商品ID, string (50) , 条件必填</itemId>  
+
+<itemName>商品名称,  string (200) </itemName>  
+
+<inventoryType>库存类型,string (50) , ZP=正品, CC=残次,JS=机损, XS= 箱损,默认为ZP, (收到商品总数=正品数+残品数+机损数+箱损数)  
+
+</inventoryType>
+
+<planQty>应收数量, int</planQty>  
+
+      <actualQty>实收数量, int,必填</actualQty>  
+
+      <batchCode>批次编码, string (50) </batchCode>  
+
+      <productDate>商品生产日期,string(10), YYYY-MM-DD</productDate>  
+
+      <expireDate>商品过期日期,string(10),YYYY-MM-DD</expireDate>  
+
+      <produceCode>生产批号, string (50) </produceCode>  
+
+      <remark>备注, string (500) </remark> 
+
+    </orderLine> 
+
+  </orderLines> 
+
+</response>

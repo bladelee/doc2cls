@@ -1,0 +1,59 @@
+<request> 
+
+  <items>
+
+   <item> 
+
+     <ownerCode>货主编码, string (50) , 必填</ownerCode>
+
+     <warehouseCode>仓库编码, string (50),必填 </warehouseCode> 
+
+     <orderCode>引起异动的单据编码,string(50),必填 </orderCode>
+
+<orderType>单据类型 ,string(50),JYCK= 一般交易出库单,HHCK= 换货出库 ,BFCK= 补发出库 PTCK=普通出库单,DBCK=调拨出库 ,QTCK=其他出库, SCRK=生产入库,LYRK=领用入库,CCRK=残次品入库,CGRK=采购入库 ,DBRK= 调拨入库 ,QTRK= 其他入库 ,XTRK= 销退入库 HHRK= 换货入库 CNJG= 仓内加工单 ZTTZ=状态调整单</orderType>
+
+<outBizCode>外部业务编码, 消息ID, 用于去重,用来保证因为网络等原因导致重复传输,请求不会被重复处理,必填</outBizCode>
+
+      <itemCode>商品编码, string (50) , 必填</itemCode>  
+
+      <itemId>仓储系统商品ID, string (50),条件必填</itemId>  
+
+      <inventoryType>库存类型,string (50) , ZP=正品, CC=残次,JS=机损, XS= 箱损, ZT=在途库存 </inventoryType> 
+
+<quantity>商品变化量,int,必填,可为正为负</quantity>  
+
+      <batchCode>批次编码, string (50) </batchCode>  
+
+      <productDate>商品生产日期 YYYY-MM-DD</productDate>  
+
+      <expireDate>商品过期日期YYYY-MM-DD</expireDate>  
+
+<produceCode>生产批号, string (50) </produceCode>  
+
+<batchs><!-- 同一商品下多批次支持-->
+
+  <batch>
+
+          <batchCode>批次编号,string(50)</batchCode>  
+
+          <productDate>生产日期,string(10),YYYY-MM-DD</productDate>  
+
+          <expireDate>过期日期,string(10),YYYY-MM-DD </expireDate>  
+
+          <produceCode>生产批号,string(50),</produceCode>
+
+         <inventoryType>库存类型,string (50) , ZP=正品, CC=残次,JS=机损, XS= 箱损, ZT=在途库存 </inventoryType> 
+
+          <quantity>异动数量, int,要求batchs节点下所有的异动数量之和等于orderline中的异动数量</quantity>
+
+        </batch>
+
+       </batchs> 
+
+      <remark>备注, string (500) </remark> 
+
+</item> 
+
+  </items>
+
+</request>

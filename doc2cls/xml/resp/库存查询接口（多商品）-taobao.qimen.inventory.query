@@ -1,0 +1,45 @@
+<response>
+
+  <flag>success|failure</flag>
+
+  <code>响应码</code>
+
+  <message>响应信息</message>
+
+  <items> 
+
+	<item> 
+
+      <warehouseCode>仓库编码, string (50) </warehouseCode>  
+
+      <itemCode>商品编码, string (50) , 必填</itemCode>  
+
+      <itemId>仓储系统商品ID, string (50),条件必填</itemId>  
+
+       <inventoryType>库存类型,string (50) , ZP=正品, CC=残次,JS=机损, XS= 箱损, ZT=在途库存</inventoryType>  
+
+<quantity>未冻结库存数量,int,必填</quantity> 
+
+<lockQuantity>冻结库存数量,int,必填 </lockQuantity>
+
+      <batchCode>批次编码, string (50) </batchCode>  
+
+      <productDate>商品生产日期 YYYY-MM-DD</productDate>  
+
+      <expireDate>商品过期日期YYYY-MM-DD</expireDate>  
+
+      <produceCode>生产批号, string (50) </produceCode>  
+
+      <extendProps>扩展属性 
+
+        <key1>value1</key1>  
+
+        <key2>value2</key2> 
+
+      </extendProps> 
+
+    </item> 
+
+  </items> 
+
+</response>

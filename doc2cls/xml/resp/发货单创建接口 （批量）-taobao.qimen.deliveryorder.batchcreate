@@ -1,0 +1,21 @@
+<response> 
+
+  <flag>success|failure,只要有一个失败flag就置为failure,如果是success,就忽略下面的orders节点</flag>  
+
+  <code>响应码</code>  
+
+  <message>响应信息</message>  
+
+  <orders>
+
+   <order>
+
+<deliveryOrderCode>出错的出库单号, string (50) , 必填</deliveryOrderCode>  
+
+    <message>出错信息</message>
+
+  </order>
+
+ </orders>
+
+</response>

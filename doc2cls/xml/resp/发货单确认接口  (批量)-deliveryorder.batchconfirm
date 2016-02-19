@@ -1,0 +1,9 @@
+<response> 
+
+  <flag>success|failure,只要有一个失败flag就置为failure,如果是success,就忽略下面的orders节点,只要有failure,WMS重发该报文</flag>  
+
+  <code>响应码</code>  
+
+  <message>响应信息</message>  
+
+</response>

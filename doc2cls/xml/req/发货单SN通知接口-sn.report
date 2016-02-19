@@ -1,0 +1,39 @@
+<request> 
+
+  <totalPage>总页数, int,必填</totalPage>  
+
+  <currentPage>当前页, 从1开始,int, 必填</currentPage>  
+
+  <pageSize>每页记录的条数, int,  必填</pageSize>  
+
+  <deliveryOrder> 
+
+    <deliveryOrderCode>出库单号, string (50) , 必填</deliveryOrderCode>  
+
+    <deliveryOrderId>仓储系统出库单号, string (50) ,条件必填</deliveryOrderId>  
+
+<warehouseCode>仓库编码, string (50),必填 </warehouseCode>   
+
+    <ownerCode>货主编码, string (50) </ownerCode>  
+
+    <orderType>出库单类型, string (50),JYCK=一般交易出库,HHCK=换货出库,BFCK=补发出库,PTCK=普通出库单,DBCK=调拨出库 ,QTCK=其他出库,B2BCK=B2B出库,必填</orderType>  
+
+<outBizCode>string (50) , 外部业务编码, 消息ID, 用于去重, ISV对于同一请求,分配一个唯一性的编码。用来保证因为网络等原因导致重复传输,请求不会被重复处理,条件必填,条件为一单需要多次确认时 </outBizCode>  
+
+</deliveryOrder>
+
+      <items> <!--一次最多允许1000条-->
+
+        <item> 
+
+          <itemCode>商品编码, string (50) , 必填</itemCode>  
+
+          <itemId>商品仓储系统编码, string (50)</itemId> 
+
+          <sn>商品序列号, string(50), 必填</sn>
+
+        </item> 
+
+      </items> 
+
+</request>

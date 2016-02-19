@@ -1,0 +1,21 @@
+<request>
+
+<criteriaList>
+
+<criteria>
+
+         <warehouseCode>仓库编码, string (50) </warehouseCode>
+
+         <ownerCode>货主编码,string(50)</ownerCode>
+
+	    <itemCode>商品编码,string(50),必填</itemCode>
+
+         <itemId>仓储系统商品ID, string (50),条件必填</itemId>
+
+<inventoryType>库存类型,string (50) , ZP=正品, CC=残次,JS=机损, XS= 箱损, ZT=在途库存,默认为查所有类型的库存</inventoryType>  
+
+	</criteria>
+
+</criteriaList>
+
+</request>

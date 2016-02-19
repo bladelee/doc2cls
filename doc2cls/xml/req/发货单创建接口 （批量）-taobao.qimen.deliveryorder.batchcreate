@@ -1,0 +1,241 @@
+<request> 
+
+<orders>
+
+  <order>
+
+  <deliveryOrder> 
+
+<deliveryOrderCode>出库单号, string (50) , 必填</deliveryOrderCode>  
+
+<preDeliveryOrderCode>原出库单号(ERP分配), string (50) , 条件必填,条件为换货出库</preDeliveryOrderCode>
+
+<preDeliveryOrderId>原出库单号(WMS分配), string (50) , 条件必填,条件为换货出库</preDeliveryOrderId>
+
+    <orderType>出库单类型, string (50) , 必填, JYCK=一般交易出库单, HHCK=换货出库单, BFCK=补发出库单,QTCK=其他出库单</orderType>  
+
+   <warehouseCode>仓库编码, string (50),必填 ,统仓统配等无需ERP指定仓储编码的情况填OTHER</warehouseCode>
+
+   <orderFlag>订单标记 ,用字符串格式来表示订单标记列表： 比如COD, 中间用“^”来隔开,string (200) , COD =货到付款 , LIMIT=限时配送 , PRESELL=预售 , COMPLAIN=已投诉 , SPLIT=拆单,  EXCHANGE=换货,  VISIT=上门 ,  MODIFYTRANSPORT=是否可改配送方式,  是否可改配送方式 默认可更改 , CONSIGN =物流宝代理发货, 自动更改发货状态 SELLER_AFFORD =是否卖家承担运费 默认是, 即没 ,  FENXIAO=分销订单</orderFlag>  
+
+    <sourcePlatformCode>订单来源平台编码, string (50) , 必填,TB= 淘宝 、TM=天猫 、JD=京东、DD=当当、PP=拍拍、YX=易讯、EBAY=ebay、QQ=QQ网购、AMAZON=亚马逊、SN=苏宁、GM=国美、WPH=唯品会、JM=聚美、LF=乐蜂、MGJ=蘑菇街、JS=聚尚、PX=拍鞋、YT=银泰、YHD=1号店、VANCL=凡客、YL=邮乐、YG=优购、1688=阿里巴巴、POS=POS门店、OTHER=其他,  (只传英文编码) </sourcePlatformCode>  
+
+    <sourcePlatformName>订单来源平台名称, string (200) </sourcePlatformName>  
+
+    <createTime>发货单创建时间, string (19) , YYYY-MM-DD HH:MM:SS, 必填  </createTime>  
+
+    <placeOrderTime>前台订单 (店铺订单) 创建时间 (下单时间) , string (19) , YYYY-MM-DD HH:MM:SS, 必填</placeOrderTime>  
+
+    <payTime>订单支付时间, string (19) , YYYY-MM-DD HH:MM:SS</payTime>  
+
+    <payNo>支付平台交易号, string(50), 淘系订单传支付宝交易号</payNo>  
+
+    <operatorCode>操作员 (审核员) 编码, string (50) </operatorCode>  
+
+    <operatorName>操作员 (审核员) 名称, string (50) </operatorName>  
+
+    <operateTime>操作 (审核) 时间, string (19) , YYYY-MM-DD HH:MM:SS, 必填</operateTime>  
+
+    <shopNick>店铺名称, string (200) , 必填</shopNick>  
+
+    <sellerNick>卖家名称, string (200) </sellerNick>  
+
+    <buyerNick>买家昵称, string (200) </buyerNick>  
+
+    <totalAmount>订单总金额 (元) , double (18, 2) , 订单总金额=应收金额+已收金额=商品总金额-订单折扣金额+快递费用</totalAmount>  
+
+    <itemAmount>商品总金额 (元) , double (18, 2) </itemAmount>  
+
+    <discountAmount>订单折扣金额 (元) , double (18, 2) </discountAmount>  
+
+    <freight>快递费用 (元) , double (18, 2) </freight>  
+
+    <arAmount>应收金额 (元) , 消费者还需要支付多少(货到付款时消费者还需要支付多少约定使用这个字段), double (18, 2) </arAmount>  
+
+    <gotAmount>已收金额 (元) , 消费者已经支付多少, double (18, 2) </gotAmount>  
+
+    <serviceFee>COD服务费, double (18, 2) </serviceFee>  
+
+    <logisticsCode>物流公司编码, string (50) , SF=顺丰、EMS=标准快递、EYB=经济快件、ZJS=宅急送、YTO=圆通  、ZTO=中通 (ZTO) 、HTKY=百世汇通、UC=优速、STO=申通、TTKDEX=天天快递  、QFKD=全峰、FAST=快捷、POSTB=邮政小包  、GTO=国通、YUNDA=韵达、JD=京东配送、DD=当当宅配、OTHER=其他,必填,  (只传英文编码) </logisticsCode>  
+
+    <logisticsName>物流公司名称, string (200) </logisticsName>  
+
+    <expressCode>运单号, string (50) </expressCode> (面单号前置的情况) 
+
+    <logisticsAreaCode>快递区域编码, 大头笔信息, string (50) </logisticsAreaCode>  
+
+    <deliveryRequirements> 
+
+      <scheduleType>投递时延要求,int, 1=工作日,2=节假日,101=当日达,102=次晨达,103=次日达, 104=预约达</scheduleType>  
+
+      <scheduleDay>要求送达日期, string (10) , YYYY-MM-DD</scheduleDay>  
+
+      <scheduleStartTime>投递时间范围要求 (开始时间) , string (8) , HH:MM:SS</scheduleStartTime>  
+
+<scheduleEndTime>投递时间范围要求 (结束时间) , string (8) , HH:MM:SS</scheduleEndTime> 
+
+<deliveryType>发货服务类型,PTPS(普通配送),LLPS(冷链配送),string(50)</deliveryType>
+
+    </deliveryRequirements>  
+
+<senderInfo> <!--发件人信息-->
+
+  <company>公司名称, string (200) </company>  
+
+      <name>姓名, string (50) , 必填</name>  
+
+      <zipCode>邮编, string (50) </zipCode>  
+
+      <tel>固定电话, string (50) </tel>  
+
+      <mobile>移动电话, string (50) , 必填</mobile>  
+
+      <email>电子邮箱, string (50) </email>  
+
+      <countryCode>国家二字码,string(50)</countryCode>  
+
+      <province>省份, string (50) , 必填</province>  
+
+      <city>城市, string (50) , 必填</city>  
+
+      <area>区域, string (50) </area>  
+
+      <town>村镇, string (50) </town>  
+
+      <detailAddress>详细地址, string (200) , 必填</detailAddress> 
+
+</senderInfo>
+
+<receiverInfo> <!--收件人信息-->
+
+  <company>公司名称, string (200) </company>  
+
+      <name>姓名, string (50) , 必填</name>  
+
+      <zipCode>邮编, string (50) </zipCode>  
+
+      <tel>固定电话, string (50) </tel>  
+
+      <mobile>移动电话, string (50) , 必填</mobile>  
+
+      <email>电子邮箱, string (50) </email>  
+
+      <countryCode>国家二字码,string(50)</countryCode>  
+
+      <province>省份, string (50) , 必填</province>  
+
+      <city>城市, string (50) , 必填</city>  
+
+      <area>区域, string (50) </area>  
+
+      <town>村镇, string (50) </town>  
+
+      <detailAddress>详细地址, string (200) , 必填</detailAddress> 
+
+    </receiverInfo>  
+
+    <isUrgency>是否紧急, Y/N, 默认为N</isUrgency>  
+
+    <invoiceFlag>是否需要发票, Y/N, 默认为N</invoiceFlag>  
+
+    <invoices> 
+
+      <invoice> 
+
+        <type>发票类型, string (50) , INVOICE=普通发票,VINVOICE=增值税普通发票, EVINVOICE=电子增票, 条件必填 (条件为invoiceFlag为Y) </type>  
+
+        <header>发票抬头, string (200) ,  (条件为invoiceFlag为Y) </header>  
+
+        <amount>发票总金额, double (18, 2) ,  (条件为invoiceFlag为Y) </amount> 
+
+        <content>发票内容,string(500) ,不推荐使用</content>
+
+ <detail><!--当content和detail同时存在时,优先处理detail的信息-->
+
+   <items>
+
+    <item>
+
+	 <itemName>商品名称, string (50)</itemName>
+
+ <unit>商品单位, string (50)</unit>
+
+ <price>商品单价, double (18, 2)</price>
+
+ <quantity>数量, int</quantity>
+
+ <amount>金额, double (18, 2)</amount>
+
+</item>
+
+         </items>
+
+        </detail>
+
+      </invoice> 
+
+    </invoices>  
+
+    <insuranceFlag>是否需要保险, Y/N, 默认为N</insuranceFlag>  
+
+    <insurance> 
+
+      <type>保险类型, string (50) </type>  
+
+      <amount>保险金额, double (18, 2) </amount> 
+
+    </insurance>  
+
+    <buyerMessage>买家留言, string (500) </buyerMessage>  
+
+<sellerMessage>卖家留言, string (500) </sellerMessage> 
+
+<remark>备注,string(500)</remark>
+
+  </deliveryOrder>  
+
+  <orderLines> 
+
+<orderLine> 
+
+  <orderLineNo>单据行号,string(50)</orderLineNo>
+
+      <sourceOrderCode>交易平台订单, string (50) </sourceOrderCode>  
+
+<subSourceOrderCode>交易平台子订单编码, string (50) </subSourceOrderCode>
+
+      <ownerCode>货主编码, string (50) , 必填</ownerCode>  
+
+<itemCode>商品编码, string (50) , 必填</itemCode>
+
+<itemId>仓储系统商品编码, string (50) ,条件必填</itemId>
+
+<inventoryType>库存类型,string (50) , ZP=正品, CC=残次,JS=机损, XS= 箱损, ZT=在途库存,默认为查所有类型的库存</inventoryType>    
+
+      <itemName>商品名称, string (200) </itemName>  
+
+      <extCode>交易平台商品编码, string (50) </extCode>  
+
+      <planQty>应发商品数量, int, 必填</planQty>  
+
+      <retailPrice>零售价, double (18, 2) , 零售价=实际成交价+单件商品折扣金额</retailPrice>  
+
+      <actualPrice>实际成交价, double (18, 2) , 必填</actualPrice>  
+
+<discountAmount>单件商品折扣金额, double (18, 2) </discountAmount> 
+
+<batchCode>批次编码, string (50) </batchCode> 
+
+      <productDate>生产日期,string(10),YYYY-MM-DD</productDate>  
+
+      <expireDate>过期日期,string(10),YYYY-MM-DD </expireDate>  
+
+    </orderLine> 
+
+  </orderLines> 
+
+ </order>
+
+</orders>
+
+</request>

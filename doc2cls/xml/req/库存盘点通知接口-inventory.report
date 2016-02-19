@@ -1,0 +1,51 @@
+<request> 
+
+  <totalPage>总页数, int,必填</totalPage>  
+
+  <currentPage>当前页, 从1开始,int, 必填</currentPage>  
+
+  <pageSize>每页记录的条数, int,  必填</pageSize>  
+
+  <warehouseCode>仓库编码, string (50) ,  必填</warehouseCode>  
+
+  <checkOrderCode>盘点单编码, string(50),必填</checkOrderCode>
+
+  <checkOrderId>仓储系统的盘点单编码, string(50),条件必填</checkOrderId>
+
+  <ownerCode>货主编码, string (50) ,  必填</ownerCode>
+
+  <checkTime>盘点时间,string(19),string (19) , YYYY-MM-DD HH:MM:SS </checkTime>
+
+  <outBizCode>外部业务编码, 消息ID, 用于去重, ISV对于同一请求,分配一个唯一性的编码。用来保证因为网络等原因导致重复传输,请求不会被重复处理,  必填</outBizCode>  
+
+  <remark>备注, string (500)</remark>  
+
+  <items> 
+
+    <item> 
+
+      <itemCode>商品编码, string (50) , 必填</itemCode>  
+
+      <itemId>仓储系统商品ID, string (50),条件必填</itemId>  
+
+<inventoryType>库存类型,string (50) , ZP=正品, CC=残次,JS=机损, XS= 箱损, ZT=在途库存,默认为ZP</inventoryType> 
+
+<quantity>盘盈盘亏商品变化量,int,必填,盘盈为正数,盘亏为负数</quantity>  
+
+      <batchCode>批次编码, string (50) </batchCode>  
+
+      <productDate>商品生产日期 YYYY-MM-DD</productDate>  
+
+      <expireDate>商品过期日期YYYY-MM-DD</expireDate>  
+
+      <produceCode>生产批号, string (50) </produceCode>  
+
+      <snCode>商品序列号</snCode>  
+
+      <remark>备注, string (500) </remark> 
+
+    </item> 
+
+  </items> 
+
+</request>

@@ -1,0 +1,11 @@
+<response>
+
+    <flag>success|failure</flag>
+
+    <code>响应码</code>
+
+<message>响应信息</message>
+
+<processOrderId>仓储系统处理单ID</processOrderId>
+
+</response>

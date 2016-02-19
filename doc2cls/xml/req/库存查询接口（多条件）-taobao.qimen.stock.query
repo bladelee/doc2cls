@@ -1,0 +1,31 @@
+<request>
+
+    <warehouseCode>仓库编码, string (50) </warehouseCode>
+
+    <ownerCode>货主编码,string(50)</ownerCode>
+
+    <itemCode>商品编码,string(50)</itemCode>
+
+    <itemId>仓储系统商品ID, string (50) </itemId>
+
+    <inventoryType>库存类型,string (50) , ZP=正品, CC=残次,JS=机损, XS= 箱损, ZT=在途库存,默认为查所有类型的库存</inventoryType>
+
+    <batchCode>批次编码, string (50) </batchCode>  
+
+    <productDate>商品生产日期 YYYY-MM-DD</productDate>  
+
+	<expireDate>商品过期日期YYYY-MM-DD</expireDate> 
+
+    <page>当前页,从1开始,必填</page>
+
+    <pageSize>每页条数(最多100条),必填</pageSize>
+
+	<extendProps>
+
+      <type>库存查询类型(菜鸟业务使用), 1- 汇总库存,不区分批次和渠道 2- 批次库存,库存按商品批次维度划分 3- 渠道库存,库存按渠道维度划分 (当前业务不支持批次库存和渠道库存共存,批次库存无渠道属性,渠道库存无批次属性)</type>
+
+<channelCode>渠道编码(菜鸟业务使用),TB=淘系,OTHERS=其他,string(50),菜鸟业务使用</channelCode>
+
+    </extendProps>
+
+	</request>

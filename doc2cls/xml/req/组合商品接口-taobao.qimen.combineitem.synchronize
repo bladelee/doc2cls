@@ -1,0 +1,23 @@
+<request> 
+
+   <itemCode>组合商品的ERP编码,  string (50) ,  必填</itemCode>
+
+   <ownerCode>货主编码, string (50) , 必填</ownerCode> 
+
+   <warehouseCode>仓库编码, string (50)</warehouseCode>  
+
+   <items>
+
+    <item>
+
+  <itemCode>商品编码,  string (50) ,  必填</itemCode>
+
+  <itemId>后端商品编码,string(50),必填</itemId>
+
+  <quantity>组合商品中的该商品个数,int,必填</quantity>
+
+	</item>
+
+   </items>
+
+</request>

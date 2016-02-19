@@ -1,0 +1,13 @@
+<response> 
+
+  <flag>success|failure</flag>  
+
+  <code>响应码</code>  
+
+  <message>响应信息</message>  
+
+  <deliveryOrderId>出库单仓储系统编码, string (50) </deliveryOrderId>  
+
+  <createTime>订单创建时间, string (19) , YYYY-MM-DD HH:MM:SS</createTime> 
+
+</response>

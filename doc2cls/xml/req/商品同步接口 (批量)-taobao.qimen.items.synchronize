@@ -1,0 +1,137 @@
+<request>
+
+  <actionType>add|update, 必填</actionType>  
+
+  <warehouseCode>仓库编码, string (50),必填 ,统仓统配等无需ERP指定仓储编码的情况填OTHER</warehouseCode> 
+
+  <ownerCode>货主编码, string (50) , 必填</ownerCode>  
+
+	  <items>
+
+   <item> 
+
+      <supplierCode>供应商编码, string (50) </supplierCode>  
+
+      <supplierName>供应商名称, string (200) </supplierName>  
+
+      <itemCode>商品编码,  string (50) ,  必填</itemCode>  
+
+<itemId>仓储系统商品编码, string (50) , 条件必填, 条件为商品同步接口, 出参itemId不为空</itemId>  
+
+<goodsCode>货号,string(50)</goodsCode>
+
+      <itemName>商品名称,  string (200) , 必填</itemName>  
+
+      <shortName>商品简称,  string (200) </shortName>  
+
+<englishName>英文名, string (200) </englishName>  
+
+<barCode>条形码,  string (500) , 可多个,用分号(;)隔开,必填</barCode> 
+
+      <skuProperty>商品属性 (如红色, XXL) ,  string (200) </skuProperty>  
+
+      <stockUnit>商品计量单位,  string (50) </stockUnit>  
+
+      <length>长 (厘米) ,  double (18, 2) </length>  
+
+      <width>宽 (厘米) ,  double (18, 2) </width>  
+
+      <height>高 (厘米) ,  double (18, 2) </height>  
+
+      <volume>体积 (升) ,  double (18, 3) </volume>  
+
+      <grossWeight>毛重 (千克) ,  double (18, 3) </grossWeight>  
+
+      <netWeight>净重 (千克) ,  double (18, 3) </netWeight>  
+
+      <color>颜色,  string (50) </color>  
+
+      <size>尺寸,  string (50) </size>  
+
+      <title>渠道中的商品标题, string (200) </title>  
+
+      <categoryId>商品类别ID, string (50) </categoryId>  
+
+      <categoryName>商品类别名称,  string (200) </categoryName>  
+
+      <pricingCategory>计价货类, string (200) </pricingCategory>  
+
+      <safetyStock>安全库存, int</safetyStock>  
+
+      <itemType>商品类型 (ZC=正常商品, FX=分销商品, ZH=组合商品, ZP=赠品, BC=包材, HC=耗材, FL=辅料, XN=虚拟品, FS=附属品, CC=残次品, OTHER=其它) ,  string (10) , 必填,  (只传英文编码) </itemType>  
+
+      <tagPrice>吊牌价, double (18, 2) </tagPrice>  
+
+      <retailPrice>零售价, double (18, 2) </retailPrice>  
+
+      <costPrice>成本价, double (18, 2) </costPrice>  
+
+      <purchasePrice>采购价, double (18, 2) </purchasePrice>  
+
+      <seasonCode>季节编码,  string (50) </seasonCode>  
+
+      <seasonName>季节名称,  string (50) </seasonName>  
+
+      <brandCode>品牌代码,  string (50) </brandCode>  
+
+      <brandName>品牌名称,  string (50) </brandName>  
+
+      <isSNMgmt>是否需要串号管理, Y/N (默认为N) </isSNMgmt>  
+
+      <productDate>生产日期, string (10) , YYYY-MM-DD</productDate>  
+
+      <expireDate>过期日期, string (10) , YYYY-MM-DD</expireDate>  
+
+      <isShelfLifeMgmt>是否需要保质期管理, Y/N (默认为N) </isShelfLifeMgmt>  
+
+      <shelfLife>保质期 (小时) , int</shelfLife>  
+
+      <rejectLifecycle>保质期禁收天数, int</rejectLifecycle>  
+
+      <lockupLifecycle>保质期禁售天数, int</lockupLifecycle>
+
+      <adventLifecycle>保质期临期预警天数, int</adventLifecycle>
+
+      <isBatchMgmt>是否需要批次管理, Y/N (默认为N) </isBatchMgmt>  
+
+      <batchCode>批次代码, string (50) </batchCode>  
+
+      <batchRemark>批次备注, string (200) </batchRemark>  
+
+      <packCode>包装代码, string (50) </packCode>  
+
+      <pcs>箱规, string(50)</pcs>  
+
+      <originAddress>商品的原产地, string (50) </originAddress>  
+
+      <approvalNumber>批准文号, string (50) </approvalNumber>  
+
+      <isFragile>是否易碎品, Y/N,  (默认为N) </isFragile>  
+
+      <isHazardous>是否危险品, Y/N,  (默认为N) </isHazardous>  
+
+      <remark>备注,  string (500) </remark>  
+
+      <createTime>创建时间, string (19) , YYYY-MM-DD HH:MM:SS</createTime>  
+
+      <updateTime>更新时间, string (19) , YYYY-MM-DD HH:MM:SS</updateTime>  
+
+      <isValid>是否有效, Y/N (默认为Y) </isValid>  
+
+      <isSku>是否sku, Y/N,  (默认为Y) </isSku>  
+
+      <packageMaterial>商品包装材料类型, string (200) </packageMaterial>
+
+      <extendProps>扩展属性 
+
+        <key1>value1</key1>  
+
+        <key2>value2</key2> 
+
+      </extendProps> 
+
+ </item>
+
+</items> 
+
+</request>

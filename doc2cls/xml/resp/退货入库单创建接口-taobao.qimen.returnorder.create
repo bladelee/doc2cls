@@ -1,0 +1,11 @@
+<response> 
+
+  <flag>success|failure</flag>  
+
+  <code>响应码</code>  
+
+  <message>响应信息</message>  
+
+  <returnOrderId>仓储系统退货单编码, string (50) </returnOrderId> 
+
+</response>

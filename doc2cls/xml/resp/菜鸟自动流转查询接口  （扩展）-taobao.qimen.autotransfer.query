@@ -1,0 +1,29 @@
+<response>
+
+    <flag>success|failure</flag>
+
+    <code>响应码</code>
+
+<message>响应信息</message>
+
+  <orderLines> 
+
+<orderLine> 
+
+  <orderLineNo>单据行号,string(50)</orderLineNo>
+
+<subSourceOrderCode>交易平台子订单编码, string (50) </subSourceOrderCode>
+
+      <warehouseCode>仓库编码, string (50) </warehouseCode> 
+
+  <deliveryOrderId>菜鸟物流编码(LBX号) ,string(50)</deliveryOrderId>
+
+      <planQty>应发商品数量, int</planQty>  
+
+<status>订单路由状态 ,状态值：WAIT_ROUTE 待路由仓 ;ROUTE_TO_CN 路由到菜鸟仓发货 ;ROUTE_TO_ERP 路由到商家仓发货;STOP_ROUTE 终止分仓。如订单已取消时,不再发货。 注：待路由仓状态表示未做路由,不确定由哪个仓库发货,可于5分钟后再次查询</status>
+
+</orderLine>
+
+</orderLines>
+
+</response>

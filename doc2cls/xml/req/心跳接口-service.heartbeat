@@ -1,0 +1,5 @@
+<request> 
+
+<serialNumber>序列号,string(18),必填</serialNumber>
+
+	</request>

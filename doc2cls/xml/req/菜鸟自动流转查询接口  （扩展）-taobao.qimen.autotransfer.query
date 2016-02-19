@@ -1,0 +1,5 @@
+<request> 
+
+     <orderSourceCode>交易平台订单编码, string (50) </orderSourceCode>  
+
+</request>

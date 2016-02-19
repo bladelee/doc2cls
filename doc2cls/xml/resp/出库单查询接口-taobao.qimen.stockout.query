@@ -1,0 +1,111 @@
+<response>
+
+    <flag>success|failure</flag>
+
+    <code>响应码</code>
+
+<message>响应信息</message>
+
+   <totalLines>orderLines总条数,int,必填</totalLines>
+
+<deliveryOrder> 
+
+    <deliveryOrderCode>出库单号, string (50) , 必填</deliveryOrderCode>  
+
+    <deliveryOrderId>仓储系统出库单号, string (50) ,条件必填</deliveryOrderId>  
+
+     <warehouseCode>仓库编码, string (50),必填 </warehouseCode> 
+
+<orderType>出库单类型, string (50),PTCK=普通出库单,DBCK=调拨出库 ,B2BCK=B2B出库,QTCK=其他出库,CGTH=采购退货出库单,必填</orderType>  
+
+    <status>出库单状态, string (50) ,  必填 (NEW-未开始处理,  ACCEPT-仓库接单 , PARTDELIVERED-部分发货完成,  DELIVERED-发货完成,  EXCEPTION-异常,  CANCELED-取消,  CLOSED-关闭,  REJECT-拒单,  CANCELEDFAIL-取消失败) ,  (只传英文编码) </status>  
+
+   <logisticsCode>物流公司编码, string (50) , SF=顺丰、EMS=标准快递、EYB=经济快件、ZJS=宅急送、YTO=圆通  、ZTO=中通 (ZTO) 、HTKY=百世汇通、UC=优速、STO=申通、TTKDEX=天天快递  、QFKD=全峰、FAST=快捷、POSTB=邮政小包  、GTO=国通、YUNDA=韵达、JD=京东配送、DD=当当宅配、OTHER=其他,(只传英文编码) </logisticsCode>
+
+ <logisticsName>物流公司名称, string (200) </logisticsName>  
+
+ <expressCode>运单号, string (50) </expressCode>  
+
+ <orderConfirmTime>订单完成时间, string (19) , YYYY-MM-DD HH:MM:SS </orderConfirmTime>  
+
+ </deliveryOrder>  
+
+  <packages> 
+
+    <package> 
+
+      <logisticsName>物流公司名称, string (200) </logisticsName>  
+
+      <expressCode>运单号, string (50) </expressCode>  
+
+      <packageCode>包裹编号, string (50) </packageCode>  
+
+      <length>包裹长度 (厘米) , double (18, 2) </length>  
+
+      <width>包裹宽度 (厘米) , double (18, 2) </width>  
+
+      <height>包裹高度 (厘米) , double (18, 2) </height>  
+
+      <weight>包裹重量 (千克) , double (18, 3) </weight>  
+
+      <volume>包裹体积 (升, L) , double (18, 3) </volume>  
+
+      <packageMaterialList> 
+
+        <packageMaterial> 
+
+          <type>包材型号, string (50) </type>  
+
+          <quantity>包材的数量, int</quantity> 
+
+        </packageMaterial> 
+
+      </packageMaterialList>  
+
+      <items> 
+
+        <item> 
+
+          <itemCode>商品编码, string (50) , 必填</itemCode>  
+
+          <itemId>商品仓储系统编码, string (50)</itemId>  
+
+          <quantity>包裹内该商品的数量, int, 必填</quantity>  
+
+        </item> 
+
+      </items> 
+
+		    </package> 		
+
+  </packages> 
+
+<orderLines>
+
+<orderLine> 
+
+          <orderLineNo>单据行号,string(50)</orderLineNo> 
+
+          <itemCode>商品编码, string (50) ,必填</itemCode>  
+
+          <itemId>商品仓储系统编码, string (50)</itemId>  
+
+          <itemName>商品名称, string (200) </itemName>
+
+          <inventoryType>库存类型,string (50) , ZP=正品, CC=残次,JS=机损, XS= 箱损,默认为ZP</inventoryType>
+
+          <actualQty>实发商品数量, int,必填</actualQty>  
+
+          <batchCode>批次编号,string(50),</batchCode>  
+
+          <productDate>生产日期,string(10),YYYY-MM-DD</productDate>  
+
+          <expireDate>过期日期,string(10),YYYY-MM-DD </expireDate>  
+
+          <produceCode>生产批号,string(50),</produceCode> 
+
+        </orderLine> 
+
+      </orderLines>
+
+</response>

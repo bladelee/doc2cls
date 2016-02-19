@@ -1,0 +1,75 @@
+<request> 
+
+  <processOrderCode>加工单编码, string (50) ,  必填</processOrderCode>  
+
+  <warehouseCode>仓库编码, string (50),必填 ,统仓统配等无需ERP指定仓储编码的情况填OTHER</warehouseCode>  
+
+  <orderType>单据类型 CNJG=仓内加工作业单, 必填</orderType>  
+
+  <orderCreateTime>加工单创建时间,  string (19) , YYYY-MM-DD HH:MM:SS, 必填</orderCreateTime>  
+
+  <planTime>计划加工时间,  string (19) , YYYY-MM-DD HH:MM:SS, 必填</planTime>  
+
+  <serviceType>加工类型:1:仓内组合加工 2:仓内组合拆分, 必填</serviceType>  
+
+  <planQty>成品计划数量</planQty>  
+
+  <extendProps>扩展属性 
+
+    <key1>value1</key1>  
+
+    <key2>value2</key2> 
+
+  </extendProps>  
+
+  <remark>备注, string (500) </remark>  
+
+  <materialitems> 
+
+    <item> 
+
+      <itemCode>erp系统商品编码, string (50) , 必填</itemCode>  
+
+      <itemId>仓储系统商品ID, string (50) , 条件必填</itemId>  
+
+       <inventoryType>库存类型,string (50) , ZP=正品, CC=残次,JS=机损, XS= 箱损,默认为ZP, </inventoryType>
+
+      <quantity>数量, int,必填</quantity>  
+
+      <productDate>商品生产日期 ,string(10),YYYY-MM-DD</productDate>  
+
+      <expireDate>商品过期日期,string(10),YYYY-MM-DD</expireDate>  
+
+      <produceCode>生产批号, string (50) </produceCode>  
+
+      <remark>备注, string (500) </remark> 
+
+    </item> 
+
+  </materialitems>  
+
+  <productitems> 
+
+      <item> 
+
+      <itemCode>erp系统商品编码, string (50) , 必填</itemCode>  
+
+      <itemId>仓储系统商品ID, string (50) ,条件必填</itemId>  
+
+       <inventoryType>库存类型,string (50) , ZP=正品, CC=残次,JS=机损, XS= 箱损,,默认为ZP, </inventoryType>
+
+      <quantity>数量, int,必填</quantity>  
+
+      <productDate>商品生产日期 ,string(10),YYYY-MM-DD</productDate>  
+
+      <expireDate>商品过期日期,string(10),YYYY-MM-DD</expireDate>  
+
+      <produceCode>生产批号, string (50) </produceCode>  
+
+      <remark>备注, string (500) </remark> 
+
+    </item> 
+
+  </productitems> 
+
+</request>

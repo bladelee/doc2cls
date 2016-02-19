@@ -1,0 +1,77 @@
+<request> 
+
+  <processOrderCode>加工单编码, string (50) ,  必填</processOrderCode>  
+
+  <processOrderId>仓储系统加工单ID, string (50) , 条件必填</processOrderId>  
+
+  <outBizCode>外部业务编码, 一个合作伙伴中要求唯一多次确认时, 每次传入要求唯一 (一般传入WMS损益单据编码) ,  必填</outBizCode>  
+
+  <orderType>单据类型 ,string(50),CNJG=仓内加工作业单, 必填</orderType>  
+
+  <orderCompleteTime>加工单完成时间,  string (19) , YYYY-MM-DD HH:MM:SS, 必填</orderCompleteTime>  
+
+  <actualQty>实际作业总数量</actualQty>  
+
+ <extendProps>扩展属性 
+
+    <key1>value1</key1>  
+
+    <key2>value2</key2> 
+
+  </extendProps>  
+
+  <remark>备注, string (500) </remark>  
+
+  <materialitems> 
+
+    <item>   
+
+      <itemCode>商品编码, string (50) , 必填</itemCode>  
+
+      <itemId>仓储系统商品ID,string(50),条件必填</itemId>  
+
+       <inventoryType>库存类型,string (50) , ZP=正品, CC=残次,JS=机损, XS= 箱损,默认为ZP, </inventoryType>  
+
+      <quantity>数量, 必填</quantity>  
+
+      <productDate>商品生产日期 YYYY-MM-DD</productDate>  
+
+      <expireDate>商品过期日期YYYY-MM-DD</expireDate>  
+
+      <produceCode>生产批号, string (50) </produceCode>  
+
+      <batchCode>批次编码, string (50) </batchCode>  
+
+      <remark>备注, string (500) </remark> 
+
+    </item> 
+
+  </materialitems>  
+
+  <productitems> 
+
+  <item> 
+
+      <itemCode>商品编码, string (50) , 必填</itemCode>  
+
+      <itemId>仓储系统商品ID,string(50), 条件必填</itemId>  
+
+       <inventoryType>库存类型,string (50) , ZP=正品, CC=残次,JS=机损, XS= 箱损,默认为ZP, </inventoryType>  
+
+      <quantity>数量, 必填</quantity>  
+
+      <productDate>商品生产日期 YYYY-MM-DD</productDate>  
+
+      <expireDate>商品过期日期YYYY-MM-DD</expireDate>  
+
+      <produceCode>生产批号, string (50) </produceCode>  
+
+      <batchCode>批次编码, string (50) </batchCode>  
+
+      <remark>备注, string (500) </remark> 
+
+    </item> 
+
+  </productitems> 
+
+</request>

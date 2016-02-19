@@ -1,0 +1,47 @@
+<response>
+
+    <flag>success|failure</flag>
+
+    <code>响应码</code>
+
+<message>响应信息</message>
+
+   <totalLines>orderLines总条数,int,必填</totalLines>
+
+  <warehouseCode>仓库编码, string (50),必填 </warehouseCode>  
+
+  <deliveryOrderCode>ERP的发货单编码, string (50) , 必填</deliveryOrderCode>  
+
+  <deliveryOrderId>仓库系统的发货单编码, string (50) , 条件必填</deliveryOrderId>  
+
+  <createTime>缺货回告创建时间, string (19) , 必填</createTime>  
+
+  <items> 
+
+    <item> 
+
+      <itemCode>商品编码, string (50) , 必填</itemCode>  
+
+<itemId>仓储系统商品编码, string (50) , 条件必填 </itemId>
+
+      <inventoryType>库存类型,string (50) , ZP=正品, CC=残次,JS=机损, XS= 箱损, ZT=在途库存</inventoryType>  
+
+      <batchCode>批次编码, string (50) </batchCode>  
+
+      <productDate>商品生产日期 YYYY-MM-DD</productDate>  
+
+      <expireDate>商品过期日期YYYY-MM-DD</expireDate>  
+
+<produceCode>生产批号, string (50) </produceCode>  
+
+      <planQty>应发商品数量, int, 必填</planQty>  
+
+      <lackQty>缺货商品数量, int, 必填</lackQty>  
+
+      <reason>缺货原因 (系统报缺, 实物报缺) , string (500) </reason> 
+
+    </item> 
+
+  </items> 
+
+</response>

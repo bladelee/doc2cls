@@ -1,0 +1,15 @@
+<request> 
+
+ <ownerCode>货主编码,  string (50) </ownerCode>  
+
+    <warehouseCode>仓库编码, string (50)</warehouseCode> 
+
+    <deliveryOrderCode>出库单号, string (50) , 必填</deliveryOrderCode>  
+
+    <deliveryOrderId>仓储系统出库单号, string (50) ,条件必填</deliveryOrderId>  
+
+   <page>当前页,从1开始,必填</page>
+
+   <pageSize>每页orderLine条数(最多100条),必填</pageSize>
+
+</request>

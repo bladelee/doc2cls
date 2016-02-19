@@ -1,0 +1,155 @@
+<request> 
+
+  <entryOrder> 
+
+<totalOrderLines>单据总行数,int,当单据需要分多个请求发送时,发送方需要将totalOrderLines填入,接收方收到后,根据实际接收到的条数和totalOrderLines进行比对,如果小于,则继续等待接收请求。如果等于,则表示该单据的所有请求发送完成。
+
+</totalOrderLines>
+
+<entryOrderCode>入库单号, string (50) , 必填</entryOrderCode>  
+
+    <ownerCode>货主编码, string (50) , 必填</ownerCode> 
+
+<purchaseOrderCode>采购单号,string(50),当orderType=CGRK时,使用</purchaseOrderCode>
+
+     <warehouseCode>仓库编码, string (50),必填 ,统仓统配等无需ERP指定仓储编码的情况填OTHER</warehouseCode> 
+
+    <orderCreateTime>订单创建时间, string (19) , YYYY-MM-DD HH:MM:SS</orderCreateTime>  
+
+    <orderType>业务类型 (SCRK=生产入库,LYRK=领用入库,CCRK=残次品入库,CGRK=采购入库,DBRK=调拨入库, QTRK=其他入库,B2BRK=B2B入库, string (50) ,  (只传英文编码) </orderType>  
+
+    <expectStartTime>预期到货时间, string (19) , YYYY-MM-DD HH:MM:SS</expectStartTime>  
+
+    <expectEndTime>最迟预期到货时间, string (19) , YYYY-MM-DD HH:MM:SS</expectEndTime>  
+
+    <logisticsCode>物流公司编码, string (50) , SF=顺丰、EMS=标准快递、EYB=经济快件、ZJS=宅急送、YTO=圆通  、ZTO=中通 (ZTO) 、HTKY=百世汇通、UC=优速、STO=申通、TTKDEX=天天快递  、QFKD=全峰、FAST=快捷、POSTB=邮政小包  、GTO=国通、YUNDA=韵达、JD=京东配送、DD=当当宅配、OTHER=其他(只传英文编码) </logisticsCode>  
+
+    <logisticsName>物流公司名称, string (200) </logisticsName>  
+
+    <expressCode>运单号, string (50) </expressCode>  
+
+    <supplierCode>供应商编码 string (50) </supplierCode>  
+
+    <supplierName>供应商名称 string (200) </supplierName>  
+
+    <operatorCode>操作员编码, string (50) </operatorCode>  
+
+    <operatorName>操作员名称, string (50) </operatorName>  
+
+    <operateTime>操作时间,  string (19) , YYYY-MM-DD HH:MM:SS</operateTime>  
+
+ <senderInfo> <!--发件人信息-->
+
+  <company>公司名称, string (200) </company>  
+
+      <name>姓名, string (50) </name>  
+
+      <zipCode>邮编, string (50) </zipCode>  
+
+      <tel>固定电话, string (50) </tel>  
+
+      <mobile>移动电话, string (50) </mobile>  
+
+      <email>电子邮箱, string (50) </email>  
+
+      <countryCode>国家二字码,string(50)</countryCode>  
+
+      <province>省份, string (50)  </province>  
+
+      <city>城市, string (50) </city>  
+
+      <area>区域, string (50) </area>  
+
+      <town>村镇, string (50) </town>  
+
+      <detailAddress>详细地址, string (200) </detailAddress> 
+
+    </senderInfo>
+
+<receiverInfo> <!--收件人信息-->
+
+  <company>公司名称, string (200) </company>  
+
+      <name>姓名, string (50) </name>  
+
+      <zipCode>邮编, string (50) </zipCode>  
+
+      <tel>固定电话, string (50) </tel>  
+
+      <mobile>移动电话, string (50)  </mobile>  
+
+      <email>电子邮箱, string (50) </email>  
+
+      <countryCode>国家二字码,string(50)</countryCode>  
+
+      <province>省份, string (50) </province>  
+
+      <city>城市, string (50)  </city>  
+
+      <area>区域, string (50) </area>  
+
+      <town>村镇, string (50) </town>  
+
+      <detailAddress>详细地址, string (200) </detailAddress> 
+
+    </receiverInfo>  
+
+    <remark>备注, string (500) </remark>  
+
+    <extendProps>扩展属性 
+
+        <key1>value1</key1>  
+
+        <key2>value2</key2> 
+
+</extendProps> 
+
+  </entryOrder>  
+
+  <orderLines> 
+
+<orderLine> 
+
+  <outBizCode>外部业务编码, 消息ID, 用于去重,当单据需要分批次发送时使用 </outBizCode>
+
+  <orderLineNo>入库单的行号,string(50)</orderLineNo>
+
+      <ownerCode>货主编码, string (50) , 必填</ownerCode> 
+
+      <itemCode>商品编码, string (50) , 必填</itemCode>
+
+      <itemId>仓储系统商品ID,string(50),条件必填</itemId>  
+
+      <itemName>商品名称, string (200) </itemName>  
+
+      <planQty>应收商品数量, int, 必填</planQty>  
+
+      <skuProperty>商品属性, string (200) </skuProperty>  
+
+      <purchasePrice>采购价, double (18, 2) </purchasePrice>  
+
+      <retailPrice>零售价, double (18, 2) </retailPrice>  
+
+      <inventoryType>库存类型,string (50) , ZP=正品, CC=残次,JS=机损, XS= 箱损,默认为ZP</inventoryType>  
+
+      <productDate>商品生产日期 YYYY-MM-DD</productDate>  
+
+      <expireDate>商品过期日期YYYY-MM-DD</expireDate>  
+
+      <produceCode>生产批号, string (50) </produceCode>  
+
+      <batchCode>批次编码, string (50) </batchCode>  
+
+      <extendProps>扩展属性 
+
+        <key1>value1</key1>  
+
+        <key2>value2</key2> 
+
+       </extendProps>  
+
+    </orderLine> 
+
+  </orderLines> 
+
+</request>

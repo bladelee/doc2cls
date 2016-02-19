@@ -1,0 +1,9 @@
+<response>
+
+    <flag>success,必填</flag>
+
+    <code>入参的序列号,必填</code>
+
+<message>接收到请求的系统时间,string(19),YYYY-MM-DD hh:mm:ss,必填 </message>
+
+</response>
